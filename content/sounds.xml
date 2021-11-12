@@ -21,12 +21,12 @@
 		<sample weight="1" path="player/hurtoa.wav" />
 	</sound>
 	<sound name="mikedie">
-		<sample weight="1" path="dieogre.wav" />
-		<sample weight="1" path="diescp.wav" />
-		<sample weight="1" path="dienose.wav" />
-		<sample weight="1" path="diepenis.wav" />
-		<sample weight="1" path="diehellyes.wav" />
-		<sample weight="1" path="diebunny1.wav" />
-		<sample weight="1" path="dieyum2.wav" />
+		<sample weight="1" path="player/dieogre.wav" />
+		<sample weight="1" path="player/diescp.wav" />
+		<sample weight="1" path="player/dienose.wav" />
+		<sample weight="1" path="player/diepenis.wav" />
+		<sample weight="1" path="player/diehellyes.wav" />
+		<sample weight="1" path="player/diebunny1.wav" />
+		<sample weight="1" path="player/dieyum2.wav" />
 	</sound>
 </sounds>
