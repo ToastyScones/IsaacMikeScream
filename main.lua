@@ -19,7 +19,6 @@ function mikecry:deathCallback()
 	local isIsaacDiesPlaying = sfxManager:IsPlaying(SoundEffect.SOUND_ISAACDIES)
 	local isMikeDiesPlaying = sfxManager:IsPlaying(mikedie)
 
-		Isaac.DebugString(tostring(mikedie))
 	if (isIsaacDiesPlaying) then
 		sfxManager:Stop(SoundEffect.SOUND_ISAACDIES)
 		if (not (isMikeDiesPlaying)) then 
