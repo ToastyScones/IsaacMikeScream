@@ -1,12 +1,24 @@
 <sounds root="sfx/">
 	<sound name="mikehurt">
-		<sample weight="1" path="hurtoog.wav" />
-		<sample weight="1" path="hurtmotor1.wav" />
-		<sample weight="1" path="hurtmotor2.wav" />
-		<sample weight="1" path="hurtman.wav" />
-		<sample weight="1" path="hurtscatman.wav" />
-		<sample weight="1" path="hurtoi.wav" />
-		<sample weight="1" path="hurtcum.wav" />
+		<sample weight="1" path="player/hurtoog.wav" />
+		<sample weight="1" path="player/hurtmotor1.wav" />
+		<sample weight="1" path="player/hurtmotor2.wav" />
+		<sample weight="1" path="player/hurtman.wav" />
+		<sample weight="1" path="player/hurtscatman.wav" />
+		<sample weight="1" path="player/hurtoi.wav" />
+		<sample weight="1" path="player/hurtcum.wav" />
+		<sample weight="1" path="player/hurteyea.wav" />
+		<sample weight="1" path="player/hurtgag.wav" />
+		<sample weight="1" path="player/hurthello.wav" />
+		<sample weight="1" path="player/hurtsonic.wav" />
+		<sample weight="1" path="player/hurtyea.wav" />
+		<sample weight="1" path="player/hurtyeehaw.wav" />
+		<sample weight="1" path="player/hurtass1.wav" />
+		<sample weight="1" path="player/hurtass2.wav" />
+		<sample weight="1" path="player/hurtbweh.wav" />
+		<sample weight="1" path="player/hurtiii.wav" />
+		<sample weight="1" path="player/hurtirl.wav" />
+		<sample weight="1" path="player/hurtoa.wav" />
 	</sound>
 	<sound name="mikedie">
 		<sample weight="1" path="dieogre.wav" />
@@ -18,4 +30,3 @@
 		<sample weight="1" path="dieyum2.wav" />
 	</sound>
 </sounds>
-
