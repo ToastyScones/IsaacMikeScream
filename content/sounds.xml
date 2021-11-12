@@ -1,0 +1,21 @@
+<sounds root="sfx/">
+	<sound name="mikehurt">
+		<sample weight="1" path="hurtoog.wav" />
+		<sample weight="1" path="hurtmotor1.wav" />
+		<sample weight="1" path="hurtmotor2.wav" />
+		<sample weight="1" path="hurtman.wav" />
+		<sample weight="1" path="hurtscatman.wav" />
+		<sample weight="1" path="hurtoi.wav" />
+		<sample weight="1" path="hurtcum.wav" />
+	</sound>
+	<sound name="mikedie">
+		<sample weight="1" path="dieogre.wav" />
+		<sample weight="1" path="diescp.wav" />
+		<sample weight="1" path="dienose.wav" />
+		<sample weight="1" path="diepenis.wav" />
+		<sample weight="1" path="diehellyes.wav" />
+		<sample weight="1" path="diebunny1.wav" />
+		<sample weight="1" path="dieyum2.wav" />
+	</sound>
+</sounds>
+
