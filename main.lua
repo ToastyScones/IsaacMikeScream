@@ -1,49 +1,32 @@
 local mikecry = RegisterMod("mikecry",1)
-local sound = SFXManager()
+local sfxManager = SFXManager()
 local mikehurt = Isaac.GetSoundIdByName("mikehurt")
 local mikedie = Isaac.GetSoundIdByName("mikedie")
 
-function mikecry:takeDamage(target,amount,flag,source,num)
-	local player = Isaac.GetPlayer(0)
-	if target.Type == EntityType.ENTITY_PLAYER then
-		sound:Stop(SoundEffect.SOUND_ISAAC_HURT_GRUNT)
-		sound:Play(mikehurt, 1.0, 0, false, 1.0)
-	end
+function mikecry:hurtCallback()
+	local isIsaacHurtPlaying = sfxManager:IsPlaying(SoundEffect.SOUND_ISAAC_HURT_GRUNT)
+	local isMikeHurtPlaying = sfxManager:IsPlaying(mikehurt)
 
-	if EntityType.ENTITY_PLAYER == IsDead() then
-		sound:Stop(SoundEffect.SOUND_ISAACDIES)
-		sound:Play(mikedie, 1.0, 0, false, 1.0)
-	end
-end
-
-function mikecry:takeDamage2(target, damage, flags, source, damageCountdown)
-	local player = Isaac.GetPlayer(0)
-
-	Isaac.DebugString("hello")
-	Isaac.DebugString(tostring(player:IsDead()))
-
-	if target.Type == EntityType.ENTITY_PLAYER then
-		Isaac.DebugString("Player got Dmg")
-		sound:Stop(55)
-		sound:Play(mikehurt, 1.0, 0, false, 1.0)
-	end
-
-	if player:IsDead() then
-		Isaac.DebugString("Player got dead")
-		--sound:Stop(SoundEffect.SOUND_ISAACDIES)
-		sound:Play(mikedie, 1.0, 0, false, 1.0)
+	if (isIsaacHurtPlaying) then
+		sfxManager:Stop(SoundEffect.SOUND_ISAAC_HURT_GRUNT)
+		if (not (isMikeHurtPlaying)) then 
+			sfxManager:Play(mikehurt, 1.0, 0, false, 1.0)
+		end
 	end
 end
 
-function mikecry:tick()
-	local player = Isaac.GetPlayer(0);
-	if player:IsDead() then
-		Isaac.DebugString("Player got dead")
-		--sound:Stop(SoundEffect.SOUND_ISAACDIES)
-		sound:Play(mikedie, 1.0, 0, false, 1.0)
+function mikecry:deathCallback()
+	local isIsaacDiesPlaying = sfxManager:IsPlaying(SoundEffect.SOUND_ISAACDIES)
+	local isMikeDiesPlaying = sfxManager:IsPlaying(mikedie)
+
+		Isaac.DebugString(tostring(mikedie))
+	if (isIsaacDiesPlaying) then
+		sfxManager:Stop(SoundEffect.SOUND_ISAACDIES)
+		if (not (isMikeDiesPlaying)) then 
+			sfxManager:Play(mikedie, 1.0, 0, false, 1.0)
+		end
 	end
 end
---mikecry:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, EntityType.ENTITY_PLAYER, takeDamage)
---mikecry:AddCallback(ModCallbacks.IsDead(), mikedie)
-mikecry:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, mikecry.takeDamage2)
-mikecry:AddCallback(ModCallbacks.MC_POST_UPDATE, mikecry.tick);
+
+mikecry:AddCallback(ModCallbacks.MC_POST_UPDATE, mikecry.hurtCallback);
+mikecry:AddCallback(ModCallbacks.MC_POST_UPDATE, mikecry.deathCallback);
