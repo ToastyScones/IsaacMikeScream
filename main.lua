@@ -1,6 +1,9 @@
 local mikecry = RegisterMod("mikecry",1)
 local sfxManager = SFXManager()
-local mikeHurtMaxId = 3
+local sfxVolume = 1.0
+local sfxFrameDelay = 0
+local sfxLoop = false
+local mikeHurtMaxXmlId = 3 -- mikehurt1 through 3
 local mikeDiesSoundIds = {
 	[1] = Isaac.GetSoundIdByName("mikedie1"),
 	[2] = Isaac.GetSoundIdByName("mikedie2"),
@@ -12,8 +15,10 @@ function mikecry:takeDmgCallback(target, damage, flags, source, damageCountdown)
 	local player = Isaac.GetPlayer(0)
 
 	if target.Type == EntityType.ENTITY_PLAYER then
-		local mikeHurtSoundId = Isaac.GetSoundIdByName("mikehurt" .. math.random(1,mikeHurtMaxId))
-		sfxManager:Play(mikeHurtSoundId, 1.0, 0, false, 1-(player.SpriteScale.X-1))
+		local mikeHurtXmlId = math.random(1,mikeHurtMaxXmlId)
+		local mikeHurtSoundId = Isaac.GetSoundIdByName("mikehurt" .. mikeHurtXmlId)
+
+		sfxManager:Play(mikeHurtSoundId, sfxVolume, sfxFrameDelay, sfxLoop, 1-(player.SpriteScale.X-1))
 	end
 end
 
@@ -27,7 +32,7 @@ function mikecry:deathCallback()
 	local isIsaacDiesPlaying = sfxManager:IsPlaying(SoundEffect.SOUND_ISAACDIES)
 	local player = Isaac.GetPlayer(0)
 
-	if (player:IsDead() and isIsaacDiesPlaying) then
+	if (isIsaacDiesPlaying) then
 		sfxManager:Stop(SoundEffect.SOUND_ISAACDIES)
 
 		local isMikeDiesPlaying = false
@@ -37,7 +42,7 @@ function mikecry:deathCallback()
 
 		if (not (isMikeDiesPlaying)) then
 			local index = math.random(1, 3)
-			sfxManager:Play(mikeDiesSoundIds[index], 1.0, 0, false, 1-(player.SpriteScale.X-1))
+			sfxManager:Play(mikeDiesSoundIds[index], sfxVolume, sfxFrameDelay, sfxLoop, 1-(player.SpriteScale.X-1))
 		end
 	end
 end
@@ -53,7 +58,7 @@ function mikecry:lostSoulCallback(entityFamiliar)
 
 		if (not (isMikeDiesPlaying)) then
 			local index = math.random(1, 3)
-			sfxManager:Play(mikeDiesSoundIds[index], 1.0, 0, false, 2.5)
+			sfxManager:Play(mikeDiesSoundIds[index], sfxVolume, sfxFrameDelay, sfxLoop, 2.5)
 		end
 	end
 end
