@@ -1,5 +1,5 @@
 <sounds root="sfx/">
-	<sound name="mikehurt">
+	<sound name="mikehurt1">
 		<sample weight="1" path="player/hurtoog.wav" />
 		<sample weight="1" path="player/hurtmotor1.wav" />
 		<sample weight="1" path="player/hurtmotor2.wav" />
@@ -7,6 +7,8 @@
 		<sample weight="1" path="player/hurtscatman.wav" />
 		<sample weight="1" path="player/hurtoi.wav" />
 		<sample weight="1" path="player/hurtcum.wav" />
+	</sound>
+	<sound name="mikehurt2">
 		<sample weight="1" path="player/hurteyea.wav" />
 		<sample weight="1" path="player/hurtgag.wav" />
 		<sample weight="1" path="player/hurthello.wav" />
@@ -14,19 +16,29 @@
 		<sample weight="1" path="player/hurtyea.wav" />
 		<sample weight="1" path="player/hurtyeehaw.wav" />
 		<sample weight="1" path="player/hurtass1.wav" />
+	</sound>
+	<sound name="mikehurt3">
 		<sample weight="1" path="player/hurtass2.wav" />
 		<sample weight="1" path="player/hurtbweh.wav" />
 		<sample weight="1" path="player/hurtiii.wav" />
 		<sample weight="1" path="player/hurtirl.wav" />
+	</sample>
+	<sound name="mikehurt4">
 		<sample weight="1" path="player/hurtoa.wav" />
 	</sound>
-	<sound name="mikedie">
+	<sound name="mikedie1">
 		<sample weight="1" path="player/dieogre.wav" />
 		<sample weight="1" path="player/diescp.wav" />
+	</sound>
+	<sound name="mikedie2">
 		<sample weight="1" path="player/dienose.wav" />
 		<sample weight="1" path="player/diepenis.wav" />
+	</sound>
+	<sound name="mikedie3">
 		<sample weight="1" path="player/diehellyes.wav" />
 		<sample weight="1" path="player/diebunny1.wav" />
+	</sound>
+	<sound name="mikedie4">
 		<sample weight="1" path="player/dieyum2.wav" />
 	</sound>
 </sounds>
